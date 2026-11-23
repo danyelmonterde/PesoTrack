@@ -1,0 +1,212 @@
+/* Custom Styles and Enhancements for PesoTrack PH */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Tab Navigation Styling */
+.nav-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.5rem;
+  color: #64748b;
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.dark .nav-tab {
+  color: #94a3b8;
+}
+
+.nav-tab:hover {
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+
+.dark .nav-tab:hover {
+  color: #f8fafc;
+  background-color: #1e293b;
+}
+
+.nav-tab.active-tab {
+  color: #059669;
+  background-color: #ecfdf5;
+  font-weight: 600;
+}
+
+.dark .nav-tab.active-tab {
+  color: #34d399;
+  background-color: rgba(6, 78, 59, 0.4);
+}
+
+/* Modal Animations */
+.modal-overlay {
+  transition: opacity 0.2s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Philippine Card Issuer Badges */
+.badge-bpi {
+  background-color: #be123c;
+  color: #ffffff;
+}
+
+.badge-bdo {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.badge-eastwest {
+  background-color: #7e22ce;
+  color: #ffffff;
+}
+
+.badge-chinabank {
+  background-color: #b91c1c;
+  color: #ffffff;
+}
+
+.badge-atome {
+  background-color: #eab308;
+  color: #000000;
+}
+
+.badge-metrobank {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+
+.badge-spaylater {
+  background-color: #ea580c;
+  color: #ffffff;
+}
+
+.badge-atome-cash {
+  background-color: #f59e0b;
+  color: #000000;
+}
+
+.badge-tonik {
+  background-color: #9333ea;
+  color: #ffffff;
+}
+
+.badge-sloan {
+  background-color: #c2410c;
+  color: #ffffff;
+}
+
+.badge-other {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+/* Status Badges */
+.badge-status-active {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+.dark .badge-status-active {
+  background-color: rgba(30, 58, 138, 0.3);
+  color: #93c5fd;
+  border-color: #1e3a8a;
+}
+
+.badge-status-paid {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+.dark .badge-status-paid {
+  background-color: rgba(6, 95, 70, 0.3);
+  color: #6ee7b7;
+  border-color: #064e3b;
+}
+
+.badge-status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+.dark .badge-status-pending {
+  background-color: rgba(146, 64, 14, 0.3);
+  color: #fcd34d;
+  border-color: #78350f;
+}
+
+/* Toast Notifications */
+.toast {
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(100%);
+  opacity: 0;
+}
+.toast.toast-show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Print Optimization */
+@media print {
+  header, #kpiBar, .nav-tab, button, .modal-overlay, #quickStrategyBanner {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .tab-pane {
+    display: block !important;
+  }
+}
